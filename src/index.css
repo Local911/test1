@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for better mobile experience */
+html {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* DatePicker Custom Styles */
+.react-datepicker {
+  @apply bg-gray-800 border border-gray-700 text-white !important;
+}
+
+.react-datepicker__header {
+  @apply bg-gray-900 border-gray-700 !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  @apply text-white !important;
+}
+
+.react-datepicker__day:hover {
+  @apply bg-purple-600 !important;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  @apply bg-purple-500 !important;
+}
+
+.react-datepicker__time-container,
+.react-datepicker__time-box {
+  @apply bg-gray-800 border-gray-700 !important;
+}
+
+.react-datepicker__time-list-item {
+  @apply text-white hover:bg-purple-600 !important;
+}
+
+.react-datepicker__time-list-item--selected {
+  @apply bg-purple-500 !important;
+}
+
+.react-datepicker__triangle::before,
+.react-datepicker__triangle::after {
+  @apply border-gray-700 !important;
+}
+
+/* Ensure all interactive elements have adequate touch target size */
+@media (max-width: 768px) {
+  button, 
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
